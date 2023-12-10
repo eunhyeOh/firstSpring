@@ -7,14 +7,21 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MemberController {
 
+    /**필드 주입
+    @Autowired private MemberService;
     /*
-    * 다른 여러 컨트롤러에서도 사용한다면 여러개 생성할 필요가 없음
-    * */
-//    private final MemberService memberService = new MemberService();
 
-    private final MemberService memberService;
+    /**세터 주입
+    private MemberService memberService;
+    @Autowired
+    public void SetMemberService(MemberService memberService){
+        this.memberService = memberService;
+    }
+    */
 
-    //의존관계주입(DI)
+    //생성자주입
+    private MemberService memberService;
+
     @Autowired
     public MemberController(MemberService memberService){
         this.memberService = memberService;
