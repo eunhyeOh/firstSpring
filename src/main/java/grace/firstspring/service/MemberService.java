@@ -3,10 +3,13 @@ package grace.firstspring.service;
 import grace.firstspring.domain.Member;
 import grace.firstspring.repository.MemberRepository;
 import grace.firstspring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -14,6 +17,7 @@ public class MemberService {
     //의존성 주입
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
